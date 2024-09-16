@@ -11,7 +11,7 @@
 </ul>
 
 <h3>Intruções para rodar a aplicação: </h3>
-<p>Ao clonar a aplicação e importá-la na IDE de preferência, rodar a classe 'AgroplusApplication'. O servidor acoplado à aplicação irá iniciar juntamente da API, a qual estará disponível para uso na URL localhost:8080.</p>
+<p>Ao clonar a aplicação e importá-la na IDE de preferência, rodar a classe 'AgroplusApplication'. O servidor acoplado à aplicação iniciará, ficando disponível para uso na URL localhost:8080.</p>
 
 
 <br/>
@@ -19,22 +19,37 @@
  https://youtu.be/HcsZzeJStkQ<br/>
 <br/>
 
+<br/>
+<h3>Link da aplicação: </h3>
+ https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/
+<br/>
+
+<br/>
+<h3>Link do Swagger: </h3>
+ https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/swagger-ui/index.html
+<br/>
+
 <h3>EndPoints: </h3>
 
 <ul>
-    <li>GET /vendedor</li>
-    <li>GET /vendedor/{id}</li>
-    <li>POST /vendedor</li>
-    <li>PUT /vendedor/{id}</li>
-    <li>DELETE /vendedor/{id}</li>
+    <li>GET /api/vendedor</li>
+    <li>GET /api/vendedor/{id}</li>
+    <li>POST /api/vendedor</li>
+    <li>PUT /api/vendedor/{id}</li>
+    <li>DELETE /api/vendedor/{id}</li>
 </ul>
 
 <ul>
-    <li>GET /cliente</li>
-    <li>GET /cliente/{id}</li>
-    <li>POST /cliente</li>
-    <li>PUT /cliente/{id}</li>
-    <li>DELETE /cliente/{id}</li>
+    <li>GET /api/cliente</li>
+    <li>GET /api/cliente/{id}</li>
+    <li>POST /api/cliente</li>
+    <li>PUT /api/cliente/{id}</li>
+    <li>DELETE /api/cliente/{id}</li>
+</ul>
+
+<ul>
+    <li>GET /api/tiposCultivos</li>
+    <li>POST /api/tiposCultivos</li>
 </ul>
 
 <h1>Diagramas</h1>
