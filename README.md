@@ -16,7 +16,7 @@
 
 <br/>
 <h3>Link do pitch no youtube: </h3>
- https://youtu.be/HcsZzeJStkQ<br/>
+ https://youtu.be/HcsZzeJStkQ
 <br/>
 
 <br/>
