@@ -54,15 +54,6 @@
 						Cliente</button>
 				</form>
 			</div>
-			
-			
-			
-
-			
-			
-			
-			
-
 			<!-- Tabela de clientes -->
 			<div>
 				<h2>Lista de Clientes</h2>
@@ -81,8 +72,6 @@
 							<td th:text="${cliente.nome}">Nome</td>
 
 							<td class="acoes">
-								<!-- Link para editar o brinquedo 
-								 <a href="#myModal" class="btn btn-primary btn-sm">Editar</a> --> 
 								
 								<a 
 									href="#" 
@@ -91,13 +80,6 @@
    									data-bs-target="#myModal"
    									th:attr="data-id=${cliente.id}">Editar
    								</a>
-								
-
-								<!--<form th:action="@{/clientes/excluir/{id}(id=${cliente.id})}" method="post" style="display: inline;">
-									 <button 
-									    type="submit" class="btn btn-danger btn-sm">Excluir
-									</button>
-								</form>  -->
 								
 								<a 
 								    href="#" 
@@ -112,37 +94,10 @@
 									class="btn btn-secondary btn-sm ">Visualizar
 								</a>
 							</td>
-
-
 						</tr>
 					</tbody>
 				</table>
 			</div>
-			
-			
-			<!-- <a href="#myModal">Abrir Modal</a> -->
-			<!-- O Modal  
-			<div id="myModal" class="modal">
-			    <div class="modal-content">
-			        <a href="#" class="modal-close">&times;</a>
-			        <h2>Editar Cliente</h2>
-			        <br/>
-			        <form id="editClienteForm" method="post" action="/clientes/editar">
-			            <div>
-			                <label for="clienteNome" class="form-label">Nome:</label>
-			                <input type="text" id="clienteNome" name="nome" placeholder="Digite o nome do cliente" class="form-control" required>
-			            </div>
-			            <br/>
-			            <button type="submit" class="btn btn-primary btn-sm ">Salvar</button>
-			        </form>
-			        
-			    </div>
-			</div>
-			
-		-->
-		
-			
-		
 			<div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			    <div class="modal-dialog">
 			        <div class="modal-content">
@@ -168,9 +123,6 @@
 			    </div>
 			</div>
 
-
-
-
 			<!-- Modal de confirmação -->
 			<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
 			    <div class="modal-dialog">
@@ -192,12 +144,6 @@
 			        </div>
 			    </div>
 			</div>
-
-
-
-
-
-
 		</div>
 	</main>
 </body>
