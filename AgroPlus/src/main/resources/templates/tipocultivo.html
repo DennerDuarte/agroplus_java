@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">[[#{app.title}]]</title>
@@ -23,7 +23,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarToggle">
 					<ul class="navbar-nav ms-auto">
-						<li class="navbar-item">
+						<li class="nav-item">
 							<a th:href="@{/}" class="nav-link">[[#{navigation.home}]]</a>
 						</li>
 					</ul>
@@ -120,10 +120,10 @@
 			</div>
 		</div>
 	</main>
-</body>
  <footer class="footer bg-light py-3">
    <div class="container text-center">
        <span class="text-muted">© 2024 AgroPlus. Todos os direitos reservados.</span>
    </div>
 </footer>
+</body>
 </html>
