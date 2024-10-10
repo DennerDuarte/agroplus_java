@@ -1,64 +1,247 @@
+# Nome da Aplicação: Agro+
 
-<h1>Nome da Aplicação: Agro+</h1>
+## Integrantes:
+- **Lucas Petroni** - Responsável pelo desenvolvimento do frontend da aplicação.
+- **Matheus Paulo Lima Delgado** - Responsável pelas atividades relacionadas a IA e infraestrutura.
+- **Caio Boris** - Responsável por gravar o pitch e criar a documentação sobre a ideia do projeto.
+- **Nathaly Oliveira** - Responsável pela criação da base de dados e API.
+- **Denner Duarte** - Responsável pela realização da API.
 
-<h3>Integrantes: </h3>
-<ul>
-    <li>Lucas Petroni - Responsável pelo desenvolvimento do frontend da aplicação.</li>
-    <li>Matheus Paulo Lima Delgado - Responsável pelas atividades relacionadas a IA e infraestrutura.</li>
-    <li>Caio Boris - Resposável por gravar o pitch e criar a documentação sobre a ideia do projeto.</li>
-    <li>Nathaly Oliveira - Responsável pela criação da base de dados e Api.</li>
-    <li>Denner Duarte - Responsável pela realização da API.</li>
-</ul>
+## Instruções para rodar a aplicação:
+Ao clonar a aplicação e importá-la na IDE de preferência, rodar a classe `AgroplusApplication`. O servidor acoplado à aplicação iniciará, ficando disponível para uso na URL `http://localhost:8080`.
 
-<h3>Intruções para rodar a aplicação: </h3>
-<p>Ao clonar a aplicação e importá-la na IDE de preferência, rodar a classe 'AgroplusApplication'. O servidor acoplado à aplicação iniciará, ficando disponível para uso na URL localhost:8080.</p>
+## Links
+- **Link do pitch no YouTube**: [Clique aqui](https://youtu.be/HcsZzeJStkQ)
+- **Link da aplicação**: [Clique aqui](https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/)
+- **Link do Swagger**: [Clique aqui](https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/swagger-ui/index.html)
 
+## Endpoints
 
-<br/>
-<h3>Link do pitch no youtube: </h3>
- https://youtu.be/HcsZzeJStkQ
-<br/>
+### Clientes
+- **Obter todos os Clientes**
+  - **Método**: `GET`
+  - **Endpoint**: `/api/clientes`
+  - **Resposta**:
+    ```json
+    [
+      {
+        "id": 3,
+        "nome": "Matheus",
+        "tipoCultivos": [],
+        "vendas": []
+      },
+      {
+        "id": 4,
+        "nome": "Maria da Silva",
+        "tipoCultivos": [],
+        "vendas": []
+      },
+      {
+        "id": 10,
+        "nome": "Teste Menk - Updated",
+        "tipoCultivos": [],
+        "vendas": []
+      }
+    ]
+    ```
 
-<br/>
-<h3>Link da aplicação: </h3>
- https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/
-<br/>
+- **Obter Cliente por ID**
+  - **Método**: `GET`
+  - **Endpoint**: `/api/clientes/{id}`
+  - **Exemplo de Requisição**:
+    ```
+    GET /api/clientes/1
+    ```
+  - **Resposta**:
+    ```json
+      {
+        "id": 1,
+        "nome": "Nathaly",
+        "tipoCultivos": [],
+        "vendas": []
+      }
+    ```
 
-<br/>
-<h3>Link do Swagger: </h3>
- https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/swagger-ui/index.html
-<br/>
+- **Criar Cliente**
+  - **Método**: `POST`
+  - **Endpoint**: `/api/clientes`
+  - **Exemplo de Requisição**:
+    ```json
+    {
+      "nome": "Cliente Novo"
+    }
+    ```
+  - **Resposta**:
+    ```json
+    {
+      "id": 3,
+      "nome": "Cliente Novo",
+      "tipoCultivos": [],
+      "vendas": []
+    }
+    ```
 
-<h3>EndPoints: </h3>
+- **Atualizar Cliente**
+  - **Método**: `PUT`
+  - **Endpoint**: `/api/clientes/{id}`
+  - **Exemplo de Requisição**:
+    ```json
+    {
+      "nome": "Cliente Atualizado"
+    }
+    ```
+  - **Resposta**:
+    ```json
+    {
+      "id": 1,
+      "nome": "Cliente Atualizado",
+      "tipoCultivos": [],
+      "vendas": []
+    }
+    ```
 
-<ul>
-    <li>GET /api/vendedor</li>
-    <li>GET /api/vendedor/{id}</li>
-    <li>POST /api/vendedor</li>
-    <li>PUT /api/vendedor/{id}</li>
-    <li>DELETE /api/vendedor/{id}</li>
-</ul>
+- **Deletar Cliente**
+  - **Método**: `DELETE`
+  - **Endpoint**: `/api/clientes/{id}`
+  - **Exemplo de Requisição**:
+    ```
+    DELETE /api/clientes/1
+    ```
 
-<ul>
-    <li>GET /api/cliente</li>
-    <li>GET /api/cliente/{id}</li>
-    <li>POST /api/cliente</li>
-    <li>PUT /api/cliente/{id}</li>
-    <li>DELETE /api/cliente/{id}</li>
-</ul>
+### Vendedores
+- **Obter todos os Vendedores**
+  - **Método**: `GET`
+  - **Endpoint**: `/api/vendedores`
+  - **Resposta**:
+    ```json
+    [
+    	{
+    		"id": 3,
+    		"nome": "Natureza Ltda",
+    		"contato": "natureza.ltda@naturezaltda.com.br",
+    		"vendas": [],
+    		"regioes": []
+    	},
+    	{
+    		"id": 7,
+    		"nome": "Menk",
+    		"contato": "menk@gmail.com",
+    		"vendas": [],
+    		"regioes": []
+    	}
+    ]
+    ```
 
-<ul>
-    <li>GET /api/tiposCultivos</li>
-    <li>POST /api/tiposCultivos</li>
-</ul>
+- **Obter Vendedor por ID**
+  - **Método**: `GET`
+  - **Endpoint**: `/api/vendedores/{id}`
+  - **Exemplo de Requisição**:
+    ```
+    GET /api/vendedores/3
+    ```
+  - **Resposta**:
+    ```json
+    {
+    	"id": 3,
+    	"nome": "Natureza Ltda",
+    	"contato": "natureza.ltda@naturezaltda.com.br",
+    	"vendas": [],
+    	"regioes": []
+    }
+    ```
 
-<h1>Diagramas</h1>
+- **Criar Vendedor**
+  - **Método**: `POST`
+  - **Endpoint**: `/api/vendedores`
+  - **Exemplo de Requisição**:
+    ```json
+    {
+      "nome": "Novo Vendedor",
+      "contato": "contato@vendedor.com"
+    }
+    ```
+  - **Resposta**:
+    ```json
+    {
+      "id": 3,
+      "nome": "Novo Vendedor",
+      "contato": "contato@vendedor.com"
+    }
+    ```
 
-<h3>Diagrama de Entidades e Relacionamentos</h3>
-<img src='./Documentacao/DiagramaEntidadeRelacionamento.png'/>
-<br/>
-<h3>Diagrama de Classes</h3>
-<img src='./Documentacao/DiagramaClasses.png'/>
-<br/>
-<h3>Arquitetura</h3>
-<img src='./Documentacao/ArquiteturaAgroPlus.png'/>
+- **Atualizar Vendedor**
+  - **Método**: `PUT`
+  - **Endpoint**: `/api/vendedores/{id}`
+  - **Exemplo de Requisição**:
+    ```json
+    {
+      "nome": "Vendedor Atualizado",
+      "contato": "novo@vendedor.com"
+    }
+    ```
+  - **Resposta**:
+    ```json
+    {
+      "id": 1,
+      "nome": "Vendedor Atualizado",
+      "contato": "novo@vendedor.com"
+    }
+    ```
+
+- **Deletar Vendedor**
+  - **Método**: `DELETE`
+  - **Endpoint**: `/api/vendedores/{id}`
+  - **Exemplo de Requisição**:
+    ```
+    DELETE /api/vendedores/1
+    ```
+
+### Tipos de Cultivo
+- **Obter todos os Tipos de Cultivo**
+  - **Método**: `GET`
+  - **Endpoint**: `/api/tiposCultivos`
+  - **Resposta**:
+    ```json
+    [
+      {
+        "id": 1,
+        "descricao": "Milho"
+      },
+      {
+        "id": 2,
+        "descricao": "Café"
+      },
+      {
+        "id": 3,
+        "descricao": "Soja"
+      }
+    ]
+    ```
+
+- **Criar Tipo de Cultivo**
+  - **Método**: `POST`
+  - **Endpoint**: `/api/tiposCultivos`
+  - **Exemplo de Requisição**:
+    ```json
+    {
+      "descricao": "Novo"
+    }
+    ```
+  - **Resposta**:
+    ```json
+    {
+      "id": 5,
+      "descricao": "Novo"
+    }
+    ```
+
+## Diagramas
+
+### Diagrama de Entidades e Relacionamentos
+![Diagrama de Entidades e Relacionamentos](./Documentacao/DiagramaEntidadeRelacionamento.png)
+
+### Diagrama de Classes
+![Diagrama de Classes](./Documentacao/DiagramaClasses.png)
+
+### Arquitetura
+![Arquitetura](./Documentacao/ArquiteturaAgroPlus.png)
