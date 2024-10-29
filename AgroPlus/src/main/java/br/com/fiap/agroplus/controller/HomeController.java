@@ -1,6 +1,7 @@
 package br.com.fiap.agroplus.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -11,5 +12,11 @@ public class HomeController {
     public String index() {
         return "home/index";
     }
+
+    @GetMapping("/login")
+    public String login(Model model) {return "login";}
+
+    @GetMapping("signup")
+    public String signup(Model model) {return "signup";}
 
 }
