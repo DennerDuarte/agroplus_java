@@ -7,6 +7,20 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/app.js" defer></script>
+    <style>
+        .acoes {
+            text-align: right; /* Alinha o conteúdo à direita */
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <section>
@@ -30,9 +44,9 @@
         </div>
         <button id="submit" type="submit">[[#{cadastro.cadastre}]]</button>
         <div class="register">
-            <p>[[#{cadastro.ja.possui.conta}]] <a href="/login">login.titulo</a></p>
+            <p>[[#{cadastro.ja.possui.conta}]] <a href="/login"> Clique Aqui</a></p>
         </div>
-        <div>
+        <div class="acoes">
             <a href="home/index.html">[[#{navigation.home}]]</a> |
         </div>
     </form>
@@ -47,38 +61,34 @@
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('passwordcon').value;
-        const email = document.getElementById('email').value;
 
         if (password === confirmPassword) {
             const data = {
                 username,
-                email,
                 password
             };
-
-            const jsonData = JSON.stringify(data);
 
             fetch('/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: jsonData
+                body: JSON.stringify(data)
             })
                 .then(response => {
                     if (response.ok) {
-                        alert('Sign up successful! Redirecting to login...');
+                        alert('Cadastro realizado com sucesso! Redirecionando para o login...');
                         window.location.href = '/login';
                     } else {
-                        alert('Something went wrong. Please try again.');
+                        alert('Erro no cadastro. Tente novamente.');
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error during sign up. Please try again later.');
+                    console.error('Erro:', error);
+                    alert('Erro no cadastro. Por favor, tente novamente mais tarde.');
                 });
         } else {
-            alert('Passwords do not match. Please try again.');
+            alert('As senhas não coincidem. Por favor, tente novamente.');
         }
     });
 </script>
