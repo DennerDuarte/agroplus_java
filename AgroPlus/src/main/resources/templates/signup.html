@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Signup Form</title>
+    <title>[[#{cadastro.titulo}]]</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -11,29 +11,29 @@
 <body>
 <section>
     <form id="signup-form">
-        <h1>Sign Up</h1>
+        <h1>[[#{cadastro.titulo}]]</h1>
         <div class="inputbox">
-            <label for="username">Name</label>
+            <label for="username">[[#{login.usuario}]]</label>
             <ion-icon name="person-outline"></ion-icon>
             <input type="text" id="username" name="username" required>
         </div>
 
         <div class="inputbox">
-            <label for="password">Password</label>
+            <label for="password">[[#{login.senha}]]</label>
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" id="password" name="password" required>
         </div>
         <div class="inputbox">
-            <label for="passwordcon">Confirm Password</label>
+            <label for="passwordcon">[[#{cadastro.senha.confirmar}]]</label>
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input type="password" id="passwordcon" name="passwordcon" required>
         </div>
-        <button id="submit" type="submit">Sign Up</button>
+        <button id="submit" type="submit">[[#{cadastro.cadastre}]]</button>
         <div class="register">
-            <p>Already have an account? <a href="/login">Log In</a></p>
+            <p>[[#{cadastro.ja.possui.conta}]] <a href="/login">login.titulo</a></p>
         </div>
         <div>
-            <a href="home/index.html">Home</a> |
+            <a href="home/index.html">[[#{navigation.home}]]</a> |
         </div>
     </form>
 </section>

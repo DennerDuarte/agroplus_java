@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>[[#{login.titulo}]]</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -13,26 +13,26 @@
 <section>
 
     <form action="/login" method="post">
-        <h1>Login</h1>
+        <h1>[[#{login.titulo}]]</h1>
         <div class="dialog-row">
             <label th:if="${param.error}" th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}" class="text-center redText"></label>
         </div>
         <div class="inputbox">
-            <label>Username</label>
+            <label>[[#{login.usuario}]]</label>
             <ion-icon name="mail-outline"></ion-icon>
             <input name="username" id="username" type="text" required>
         </div>
         <div class="inputbox">
-            <label>Password</label>
+            <label>[[#{login.senha}]]</label>
             <ion-icon name="lock-closed-outline"></ion-icon>
             <input name="password" type="password" id="password" required>
         </div>
-        <button>Log in</button>
+        <button>[[#{login.titulo}]]</button>
         <div class="register">
-            <p>Don't have a account ?<a href="/signup"> Register!!</a></p>
+            <p>[[#{login.nao.possui.conta}]]<a href="/signup">[[#{login.cadastro}]]</a></p>
         </div>
         <div>
-            <a href="home/index.html">Home</a> |
+            <a href="home/index.html">[[#{navigation.home}]]</a> |
         </div>
     </form>
 </section>
