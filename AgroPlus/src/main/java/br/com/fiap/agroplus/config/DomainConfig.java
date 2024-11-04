@@ -7,9 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
-//@EntityScan("br.com.fiap.agroplus.domain")
 @EntityScan("br.com.fiap.agroplus.entity")
-//@EnableJpaRepositories("br.com.fiap.agroplus.repos")
 @EnableJpaRepositories("br.com.fiap.agroplus.repository")
 @EnableTransactionManagement
 public class DomainConfig {

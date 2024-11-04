@@ -27,7 +27,6 @@ public class UsuarioService {
         if (loginRepository.findByUsername(usuario.getUsername()).isPresent()) {
             throw new RuntimeException("Usuário já cadastrado");
         }
-        usuario.setRole("USER");
         return loginRepository.save(usuario);
     }
 }

@@ -1,6 +1,7 @@
 package br.com.fiap.agroplus.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
+
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,21 +12,26 @@ import br.com.fiap.agroplus.entity.Usuario;
 import br.com.fiap.agroplus.repository.UsuarioRepository;
 
 @Service
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {	
+	
+	private final UsuarioRepository repository;
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    public CustomUserDetailsService(UsuarioRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        Usuario usuario = usuarioRepository.findByUsername(username)
-            .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
-
-        return User.builder()
-                .username(usuario.getUsername())
-                .password(usuario.getPassword())
-                .roles(usuario.getRole())
-                .build();
+        Optional<Usuario> login = repository.findByUsername(username);
+        if (login.isPresent()) {
+            var usernameobj = login.get();
+            return User.builder()
+                    .username(usernameobj.getUsername())
+                    .password(usernameobj.getPassword())
+                    .roles("USER")
+                    .build();
+        } else {
+            throw new UsernameNotFoundException("User not found: " + username );
+        }
     }
 }

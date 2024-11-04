@@ -32,6 +32,7 @@ public class UsuarioResource {
 
     @PostMapping
     public Usuario cadastrarUsuario(@RequestBody Usuario usuario) {
+    	usuario.setRole("VENDEDOR");
         return usuarioService.cadastrarUsuario(usuario);
     }
 
