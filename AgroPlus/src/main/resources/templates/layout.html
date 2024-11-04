@@ -35,10 +35,6 @@
                                 <a th:href="@{/vendedores}" class="nav-link">[[#{navigation.vendedor}]]</a>
                             </li>
                             
-                            <li class="navbar-item">
-                                <a th:href="@{/vendas}" class="nav-link">[[#{navigation.vendas}]]</a>
-                            </li>
-                            
                             
                         </ul>
                     </div>
@@ -52,13 +48,10 @@
                 <p th:if="${MSG_ERROR}" class="alert alert-danger mb-4" role="alert">[[${MSG_ERROR}]]</p>
                 <div layout:fragment="content" />
             </div>
+                        
         </main>
 	
-	<div class="container mt-4 p-4 bg-light rounded shadow">
-	    <div class="row align-items-center">
-	        <p>Nosso projeto combina inteligência artificial e análise de dados para oferecer insights aos vendedores de fertilizantes da Plusoft. O objetivo é identificar áreas e períodos estratégicos para otimizar vendas, coletando dados sobre clima, solo, histórico de vendas e demografia. A plataforma fornecerá recomendações sobre sazonalidade, demanda regional e tendências de mercado, além de prever demandas futuras. Isso permitirá que os vendedores tomem decisões informadas, aumentando a eficiência das vendas e maximizando lucros.</p>
-	    </div>
-	</div>   
+
         
     </body>
       <footer class="footer bg-light py-3">

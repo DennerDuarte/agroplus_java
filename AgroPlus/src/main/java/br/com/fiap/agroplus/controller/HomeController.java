@@ -11,5 +11,15 @@ public class HomeController {
     public String index() {
         return "home/index";
     }
+    
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+    
+    @GetMapping("/cadastro")
+    public String cadastro() {
+        return "cadastro";
+    }
 
 }

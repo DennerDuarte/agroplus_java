@@ -34,15 +34,15 @@
 
 	<main class="my-5">
 		<div class="container">
-			<h2>Tipos de Cultivo do Cliente</h2>
+			<h2>[[#{tipocultivo.titulo}]]</h2>
 			
 			<br/>
 			<!-- Botão para adicionar novo tipo de cultivo -->
-			<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCultivoModal">Novo</button>
+			<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCultivoModal">[[#{projeto.botao.novo}]]</button>
 			
 			<a 
 				th:href="@{/clientes}"
-				class="btn btn-secondary ">Voltar
+				class="btn btn-secondary ">[[#{projeto.botao.voltar}]]
 			</a>
 			
 			<br/>
@@ -52,9 +52,9 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th>Descrição</th>
-						<th>Ações</th>
+						<th>[[#{tipocultivo.id}]]</th>
+						<th>[[#{tipocultivo.descricao}]]</th>
+						<th>[[#{tipocultivo.acoes}]]</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -63,7 +63,7 @@
 						<td th:text="${cultivo.descricao}">Tipo de Cultivo 1</td>
 						<td>
 							<!-- Botão para excluir o tipo de cultivo -->
-							<a href="#" class="btn btn-danger btn-sm" th:attr="data-id=${cultivo.id}" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Excluir</a>
+							<a href="#" class="btn btn-danger btn-sm" th:attr="data-id=${cultivo.id}" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">[[#{projeto.botao.excluir}]]</a>
 						</td>
 					</tr>
 				</tbody>
@@ -77,20 +77,20 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="addCultivoModalLabel">Adicionar Tipo de Cultivo</h5>
+						<h5 class="modal-title" id="addCultivoModalLabel">[[#{tipocultivo.novo.adicionar}]]</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form id="addCultivoForm" th:action="@{/clientesTipoCultivo/adicionar}" method="post">
 							<input type="hidden" name="clienteId" th:value="${clienteId}">
 							<div class="mb-3">
-								<label for="cultivoSelect" class="form-label">Selecionar Tipo de Cultivo</label>
+								<label for="cultivoSelect" class="form-label">[[#{tipocultivo.novo.selecionar}]]</label>
 								<select id="cultivoSelect" name="cultivoId" class="form-select" required>
-									<option value="">Selecione um Tipo de Cultivo</option>
+									<option value="">[[#{tipocultivo.novo.selecionar.descricao}]]</option>
 									<option th:each="cultivoDisponivel : ${tiposCultivosDisponiveis}" th:value="${cultivoDisponivel.id}" th:text="${cultivoDisponivel.descricao}"></option>
 								</select>
 							</div>
-							<button type="submit" class="btn btn-primary">Adicionar</button>
+							<button type="submit" class="btn btn-primary">[[#{projeto.botao.adicionar}]]</button>
 						</form>
 					</div>
 				</div>
@@ -102,18 +102,18 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+						<h5 class="modal-title" id="confirmDeleteModalLabel">[[#{projeto.botao.excluir.confirmar}]]</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						Você tem certeza que deseja excluir este tipo de cultivo?
+						[[#{tipocultivo.excluir.confirmar.descricao}]]
 					</div>
 					<div class="modal-footer">
 						<form id="deleteForm" method="post" th:action="@{/clientesTipoCultivo/excluir}">
 							<input type="hidden" id="cultivoIdToDelete" name="cultivoId">
 							<input type="hidden" name="clienteId" th:value="${clienteId}">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-							<button type="submit" class="btn btn-danger">Excluir</button>
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">[[#{projeto.botao.cancelar}]]</button>
+							<button type="submit" class="btn btn-danger">[[#{projeto.botao.excluir}]]</button>
 						</form>
 					</div>
 				</div>

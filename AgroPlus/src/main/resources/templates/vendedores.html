@@ -43,28 +43,27 @@
 			<p th:if="${MSG_ERROR}" class="alert alert-danger mb-4" role="alert">[[${MSG_ERROR}]]</p>
 
 			<div class="mb-4">
-				<h2>Adicionar Novo Vendedor</h2>
+				<h2>[[#{vendedor.adicionar.novo}]]</h2>
 				<form th:action="@{/vendedores/adicionar}" method="post">
 					<div class="mb-3">
-						<label for="nome" class="form-label">Nome</label>
+						<label for="nome" class="form-label">[[#{vendedor.nome}]]</label>
 						 <input type="text" id="nome" name="nome" class="form-control" required />
 						 
-						<label for="contato" class="form-label">Contato</label>
+						<label for="contato" class="form-label">[[#{vendedor.contato}]]</label>
 						 <input type="text" id="contato" name="contato" class="form-control" required />
 					</div>
-					<button type="submit" class="btn btn-primary">Adicionar
-						Vendedor</button>
+					<button type="submit" class="btn btn-primary">[[#{vendedor.adicionar}]]</button>
 				</form>
 			</div>
 
 			<div>
-				<h2>Lista de Vendedores</h2>
+				<h2>[[#{vendedor.lista}]]</h2>
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Nome</th>
-							<th>Contato</th>
+							<th>[[#{vendedor.id}]]</th>
+							<th>[[#{vendedor.nome}]]</th>
+							<th>[[#{vendedor.contato}]]</th>
 							<th class="acoes"></th>
 						</tr>
 					</thead>
@@ -81,14 +80,14 @@
 									class="btn btn-primary btn-sm"
    									data-bs-toggle="modal"
    									data-bs-target="#myModal"
-   									th:attr="data-id=${vendedor.id}">Editar
+   									th:attr="data-id=${vendedor.id}">[[#{projeto.botao.editar}]]
    								</a>
 								<a 
 								    href="#" 
 								    class="btn btn-danger btn-sm"
 								    data-bs-toggle="modal"
 								    data-bs-target="#confirmDeleteModal"
-								    th:data-id="${vendedor.id}">Excluir
+								    th:data-id="${vendedor.id}">[[#{projeto.botao.excluir}]]
 								</a>
 							</td>
 						</tr>
@@ -100,7 +99,7 @@
 			    <div class="modal-dialog">
 			        <div class="modal-content">
 			            <div class="modal-header">
-			                <h5 class="modal-title" id="exampleModalLabel">Editar Vendedor</h5>
+			                <h5 class="modal-title" id="exampleModalLabel">[[#{vendedor.editar}]]</h5>
 			                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			            </div>
 			            <div class="modal-body">
@@ -108,17 +107,17 @@
 			                    
 			                    <input type="hidden" id="vendedorId" name="id">
 			                    <div class="mb-3">
-			                        <label for="vendedorNome" class="form-label">Nome:</label>
+			                        <label for="vendedorNome" class="form-label">[[#{vendedor.editar.nome}]]</label>
 			                        <input type="text" id="vendedorNome" name="nome" placeholder="Digite o nome do vendedor" class="form-control" required>
 			                   
-			                   		<label for="vendedorContato" class="form-label">Contato:</label>
+			                   		<label for="vendedorContato" class="form-label">[[#{vendedor.editar.contato}]]</label>
 			                        <input type="text" id="vendedorContato" name="contato" placeholder="Digite o contato do vendedor" class="form-control" required>
 			                    </div>
 			                </form>
 			            </div>
 			            <div class="modal-footer">
-			                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-			                <button type="submit" class="btn btn-primary" form="editVendedorForm">Salvar</button>
+			                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">[[#{projeto.botao.cancelar}]]</button>
+			                <button type="submit" class="btn btn-primary" form="editVendedorForm">[[#{projeto.botao.salvar}]]</button>
 			            </div>
 			        </div>
 			    </div>
@@ -129,17 +128,17 @@
 			    <div class="modal-dialog">
 			        <div class="modal-content">
 			            <div class="modal-header">
-			                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+			                <h5 class="modal-title" id="confirmDeleteModalLabel">[[#{projeto.botao.excluir.confirmar}]]</h5>
 			                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			            </div>
 			            <div class="modal-body">
-			                Você tem certeza que deseja excluir este vendedor?
+			                [[#{vendedor.excluir.confirmar}]]
 			            </div>
 			            <div class="modal-footer">
 			                <form id="deleteForm" method="post" >
 			                    <input type="hidden" id="vendedorIdToDelete" name="id">
-			                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-			                    <button type="submit" class="btn btn-danger">Excluir</button>
+			                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">[[#{projeto.botao.cancelar}]]</button>
+			                    <button type="submit" class="btn btn-danger">[[#{projeto.botao.excluir}]]</button>
 			                </form>
 			            </div>
 			        </div>

@@ -44,24 +44,23 @@
 
 			<!-- Formulário para adicionar um novo cliente -->
 			<div class="mb-4">
-				<h2>Adicionar Novo Cliente</h2>
+				<h2>[[#{clientes.novo.cliente}]]</h2>
 				<form th:action="@{/clientes/adicionar}" method="post">
 					<div class="mb-3">
-						<label for="nome" class="form-label">Nome</label>
+						<label for="nome" class="form-label">[[#{clientes.novo.nome}]]</label>
 						 <input type="text" id="nome" name="nome" class="form-control" required />
 					</div>
-					<button type="submit" class="btn btn-primary">Adicionar
-						Cliente</button>
+					<button type="submit" class="btn btn-primary">[[#{clientes.novo.adicionar}]]</button>
 				</form>
 			</div>
 			<!-- Tabela de clientes -->
 			<div>
-				<h2>Lista de Clientes</h2>
+				<h2>[[#{clientes.tabela.lista}]]</h2>
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Nome</th>
+							<th>[[#{clientes.tabela.id}]]</th>
+							<th>[[#{clientes.tabela.nome}]]</th>
 							<th class="acoes"></th>
 						</tr>
 					</thead>
@@ -78,7 +77,7 @@
 									class="btn btn-primary btn-sm"
    									data-bs-toggle="modal"
    									data-bs-target="#myModal"
-   									th:attr="data-id=${cliente.id}">Editar
+   									th:attr="data-id=${cliente.id}">[[#{projeto.botao.editar}]]
    								</a>
 								
 								<a 
@@ -86,12 +85,12 @@
 								    class="btn btn-danger btn-sm"
 								    data-bs-toggle="modal"
 								    data-bs-target="#confirmDeleteModal"
-								    th:data-id="${cliente.id}">Excluir
+								    th:data-id="${cliente.id}">[[#{projeto.botao.excluir}]]
 								</a>
 								
 								<a 
 									th:href="@{/clientesTipoCultivo/{id}(id=${cliente.id})}"
-									class="btn btn-secondary btn-sm ">Visualizar
+									class="btn btn-secondary btn-sm ">[[#{projeto.botao.visualizar}]]
 								</a>
 							</td>
 						</tr>
@@ -102,7 +101,7 @@
 			    <div class="modal-dialog">
 			        <div class="modal-content">
 			            <div class="modal-header">
-			                <h5 class="modal-title" id="exampleModalLabel">Editar Cliente</h5>
+			                <h5 class="modal-title" id="exampleModalLabel">[[#{clientes.modal.editar}]]</h5>
 			                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			            </div>
 			            <div class="modal-body">
@@ -110,14 +109,14 @@
 			                    <!-- Campo escondido para o ID do cliente -->
 			                    <input type="hidden" id="clienteId" name="id">
 			                    <div class="mb-3">
-			                        <label for="clienteNome" class="form-label">Nome:</label>
+			                        <label for="clienteNome" class="form-label">[[#{clientes.modal.editar.nome}]]</label>
 			                        <input type="text" id="clienteNome" name="nome" placeholder="Digite o nome do cliente" class="form-control" required>
 			                    </div>
 			                </form>
 			            </div>
 			            <div class="modal-footer">
-			                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-			                <button type="submit" class="btn btn-primary" form="editClienteForm">Salvar</button>
+			                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">[[#{projeto.botao.cancelar}]]</button>
+			                <button type="submit" class="btn btn-primary" form="editClienteForm">[[#{projeto.botao.salvar}]]</button>
 			            </div>
 			        </div>
 			    </div>
@@ -128,17 +127,17 @@
 			    <div class="modal-dialog">
 			        <div class="modal-content">
 			            <div class="modal-header">
-			                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+			                <h5 class="modal-title" id="confirmDeleteModalLabel">[[#{projeto.botao.excluir.confirmar}]]</h5>
 			                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			            </div>
 			            <div class="modal-body">
-			                Você tem certeza que deseja excluir este cliente?
+			                [[#{clientes.modal.editar.excluir.confirmar.descricao}]]
 			            </div>
 			            <div class="modal-footer">
 			                <form id="deleteForm" method="post" >
 			                    <input type="hidden" id="clientIdToDelete" name="id">
-			                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-			                    <button type="submit" class="btn btn-danger">Excluir</button>
+			                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">[[#{projeto.botao.cancelar}]]</button>
+			                    <button type="submit" class="btn btn-danger">[[#{projeto.botao.excluir}]]</button>
 			                </form>
 			            </div>
 			        </div>
