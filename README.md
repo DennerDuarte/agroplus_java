@@ -12,8 +12,8 @@ Ao clonar a aplicação e importá-la na IDE de preferência, rodar a classe `Ag
 
 ## Links
 - **Link do pitch no YouTube**: [Clique aqui](https://youtu.be/HcsZzeJStkQ)
-- **Link da aplicação**: [Clique aqui](https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/)
-- **Link do Swagger**: [Clique aqui](https://agroplusjava-endzbyczhyccajbh.brazilsouth-01.azurewebsites.net/swagger-ui/index.html)
+- **Link da aplicação**: [Clique aqui](https://movtoagroplus-rm552189.azurewebsites.net/)
+- **Link da apresentação técnica**: [Clique aqui](https://drive.google.com/file/d/1tIzVavyJDZvb4PIGuE8H-z6XuM4S2qa1/view?usp=sharing)
 
 ## Endpoints
 
